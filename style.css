@@ -1,0 +1,48 @@
+body {
+    background-color: tan;
+}
+
+#title-box {
+    display: flex;
+    position: relative;
+    padding-top: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px; 
+}
+
+#home-button img {
+    width: 20%;
+    height: auto;
+}
+
+#title-text {
+    color: wheat;
+}
+
+#projects a {
+    color: green;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+#projects a:hover {
+    color: firebrick;
+}
+
+#projects a:visited {
+    color: purple;
+}
+
+#projects a:visited:hover {
+    color: firebrick;
+}

@@ -22,8 +22,17 @@
     <div id="blogs">
         <h2>Blogs</h2>
         <div class="blog">
-            <h3>Template (1/1/26)</h3>
-            <p>Template as I haven't done anything yet.</p>
+            <h3>Added the Bootloader (1/1/26)</h3>
+            <p>I did some looking around on the OsDev wiki and found myself at <a href="https://wiki.osdev.org/Rolling_Your_Own_Bootloader">this article</a> about making your own bootloader. I am using the basic concepts from this to make the base for my bootloader.</p>
+            <p>First I needed to be able to boot, so I added the code that does that and bam, it boots. But it's just a blinking cursor on the default SeaBIOS startup page, and nothing more.</p>
+            <p>I needed a way to be able to read from the disk and print to the screen, so I added those and a bunch of error checking and if the following work then it will get to the last infinite loop without any errors.</p>
+            <ol>
+                <li>The booted disk can not be a floppy disk, it must be a disk drive, a flash drive (usb stick), or anything else that has a boot disk value of 0x80 or greater.</li>
+                <li>The BIOS must support the enhanced disk drive services (called extended drive functions in my code) with functions AH=41h to AH=48h.</li>
+                <li>Properly read one more sector from the disk to load the next 512 bytes of bootloader code/data.</li>
+            </ol>
+            <p>Assuming all of that works it will infinite loop (a psudo-boot for now) without any errors printed on the screen.</p>
+            <p>These changes belong to <a href="https://github.com/donovan-maker/rados/commit/8621091957972f728c85f33cf441f763750a7b24">commit 8621091</a>.</p>
         </div>
     </div>
 </body>

@@ -26,7 +26,7 @@
             <p>In the OsDev wiki article it says that one of the next things that should be added is memory map reading so the kernel knows what memory it can use.</p>
             <p>Going to the <a href="https://wiki.osdev.org/Detecting_Memory_(x86)">detecting memory</a> article specifically for this I found a BIOS interrupt called with INT 15h AX=E820h that returns the memory map.</p>
             <p>After a long and grueling process I finally got it to read all of the memory maps, and if it is of type one move it to my buffer of 16 blocks so that later the kernel can access these blocks to see what memory it can use.</p>
-            <p>>I also have it print out a message saying how many megabytes it has free +/-2MB.</p>
+            <p>I also have it print out a message saying how many megabytes it has free +/-2MB.</p>
             <p>These changes belong to <a href="https://github.com/donovan-maker/rados/commit/523631aa1ee68f78a3b3b7635fbf253c953c045c">commit 523631a</a>.</p>
         </div>
         <div class="blog">
